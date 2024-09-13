@@ -1,13 +1,13 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router/auto'
+import { setupLayouts } from 'virtual:generated-layouts'
 import { routes } from 'vue-router/auto-routes'
-
 const router = createRouter({
   //hash     #/router
   //history
 
   //ssr nuxt
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes
+  routes: setupLayouts(routes)
   // routes: [
   //   {
   //     path: '/',

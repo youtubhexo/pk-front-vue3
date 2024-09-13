@@ -7,6 +7,7 @@ import VueRouter from 'unplugin-vue-router/vite'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
+import Layouts from 'vite-plugin-vue-layouts'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -33,6 +34,11 @@ export default defineConfig({
         VueRouterAutoImports,
         '@vueuse/core'
       ]
+    }),
+    Layouts({
+      layoutsDirs: 'src/layouts',
+      pagesDirs: 'src/pages',
+      defaultLayout: 'default'
     })
   ],
   resolve: {
